@@ -5,4 +5,23 @@ class Student {
         this.nickname = nickname;
         this.email = email;
     }
+
+
+    renderStudent() {
+        let studentsContainer = document.getElementById("students-container")
+        studentsContainer.innerHTML +=
+        `
+        <ul>
+            <h4>STUDENT: ${this.nickname}</h4>
+            <li>${this.name} <b>::</b> ${this.email}</li>        
+        </ul>
+        
+        `
+
+
+
+
+    }
+
+
 }
