@@ -24,7 +24,19 @@ function fetchStudents() {
 
 
 // CRUD Create
+function studentForm() {
+    
 
+    
+
+}
+
+function studentFormSubmission() {
+
+    fetch(`${BASE_URL}/students`)
+    .then(resp => console.log(resp))
+    // .then()
+}
 
 
 
