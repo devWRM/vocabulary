@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     fetchStudents()
-
+    studentForm()
 
 })
 
@@ -25,21 +25,70 @@ function fetchStudents() {
 
 // CRUD Create
 function studentForm() {
-    
+    let formDiv = document.getElementById("student-form")
 
-    
+    formDiv.innerHTML +=
+        `
+        <form id = "reset-form"> 
+        Fill in all textboxes:</br>
+            <input type="text" id="name" placeholder="name"></input></br>
+            <input type="text" id="nickname" placeholder="nickname"></input></br>
+            <input type="email" id="email" placeholder="email"></input></br>
+            <input type="submit" value="create new student">   
+        </form>   
+        `
+
+
+    formDiv.addEventListener("submit", studentFormSubmission)
 
 }
 
 function studentFormSubmission() {
+    event.preventDefault()
 
-    fetch(`${BASE_URL}/students`)
-    .then(resp => console.log(resp))
-    // .then()
+    // INPORTANT: Remember to add .value to get data out of form <input> field
+    let name = document.getElementById("name").value
+    let nickname = document.getElementById("nickname").value
+    let email = document.getElementById("email").value
+
+    let studentFormInput = {
+        name: name,
+        nickname: nickname,
+        email: email
+    }
+    
+    fetch(`${BASE_URL}/students`, {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+        body: JSON.stringify(studentFormInput)
+    })
+    .then(resp => resp.json())
+    .then(apiStudent => {
+        
+        let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
+
+        student.renderStudent();
+
+    })
+
+    let thisForm = document.getElementById("reset-form")
+    thisForm.reset()
+
 }
 
 
 
 
 // CRUD Delete
+function deleteStudent() {
+    let studentId = parseInt(event.target.dataset.id)
 
+    fetch(`${BASE_URL}/students/${studentId}`, {
+        method: "DELETE"
+    })
+        
+    this.location.reload()
+}
