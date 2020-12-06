@@ -1,5 +1,16 @@
 
 
+
+
+
+
+
+
+========================
+
+
+
+
 READ Steps
     - Set up event listener to trigger READ (in DOMContentLoaded or another called function)
     - Create fetch function (auto GET) data from a URL address
