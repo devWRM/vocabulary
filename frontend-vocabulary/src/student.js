@@ -13,14 +13,13 @@ class Student {
         `
         <ul>
             <h4>STUDENT: ${this.nickname}</h4>
-            <li>${this.name} <b>::</b> ${this.email}</li>        
+            <li>${this.name} <b>::</b> ${this.email}</li>  
+            <button class="delete-button" data-id=${this.id} onclick="deleteStudent()">delete</button>      
         </ul>
         
         `
 
-
-
-
+        
     }
 
 
