@@ -15,7 +15,7 @@ class Student {
             <p>===========================</p>
             <h4>STUDENT: ${this.nickname}</h4>
             <li>${this.name} <b>::</b> ${this.email}</li>  
-            <button class="add-word" data-id=${this.id} onclick="addWordForm()">add a word for ${this.nickname}</button> 
+            <button class="add-word" data-id=${this.id} onclick="showForm()">add a word for ${this.nickname}</button> 
             <button class="delete-button" data-id=${this.id} onclick="deleteStudent()">delete ${this.nickname}</button> 
         </ul>
         
