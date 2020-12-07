@@ -6,9 +6,9 @@ class Word {
         this.sentence = sentence;
     }
 
-
-
-
-
     
+
+
+
+
 }
