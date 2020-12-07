@@ -16,7 +16,8 @@ Create a Word in the database with =>> rails c
 
 Word.create(spelling: "English", pos: "adjective", definition: "a language", sentence: "I want to learn English", student_id: 1)
 
-
+ Word.all[0].student.name           =>  "Abraham A."
+ Student.all[0].words[0].spelling   =>  "English"
 
 ================================================
 
