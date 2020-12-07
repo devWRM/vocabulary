@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const BASE_URL = "http://localhost:3000"
 
-
-// CRUD Read
+// CRUD Read STUDENT
 function fetchStudents() {
     fetch(`${BASE_URL}/students`)
     .then(resp => resp.json())
@@ -21,9 +20,7 @@ function fetchStudents() {
 }
 
 
-
-
-// CRUD Create
+// CRUD Create STUDENT
 function studentForm() {
     let formDiv = document.getElementById("student-form")
 
@@ -38,9 +35,7 @@ function studentForm() {
         </form>   
         `
 
-
     formDiv.addEventListener("submit", studentFormSubmission)
-
 }
 
 function studentFormSubmission() {
@@ -69,9 +64,7 @@ function studentFormSubmission() {
     .then(apiStudent => {
         
         let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
-
         student.renderStudent();
-
     })
 
     let thisForm = document.getElementById("reset-form")
@@ -80,9 +73,7 @@ function studentFormSubmission() {
 }
 
 
-
-
-// CRUD Delete
+// CRUD Delete STUDENT
 function deleteStudent() {
     let studentId = parseInt(event.target.dataset.id)
 
@@ -92,3 +83,17 @@ function deleteStudent() {
         
     this.location.reload()
 }
+
+
+
+
+// CRUD Create WORD
+function createWord() {
+
+}
+
+
+
+
+
+
