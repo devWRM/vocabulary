@@ -16,7 +16,6 @@ function fetchStudents() {
             s.renderStudent();
         }
     })
-
 }
 
 
@@ -75,6 +74,8 @@ function studentFormSubmission() {
 
 // CRUD Delete STUDENT
 function deleteStudent() {
+   
+   
     let studentId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/students/${studentId}`, {
@@ -90,6 +91,9 @@ function deleteStudent() {
 // CRUD Create WORD
 
 function showForm() {
+
+    // debugger;
+
     let hideStudents = document.getElementById("container")
     hideStudents.style.display = "none";
 
@@ -98,18 +102,21 @@ function showForm() {
 }
 
 function addWordForm(id) {
+    
     // let studentId = parseInt(event.target.dataset.id)
 
     let formDiv = document.getElementById("word-form")
 
+    // let studentName = findStudent(id)
+    // Fetch needed to find student name using id
     formDiv.innerHTML +=
         `
         <form id = "this-word-form"> 
         Enter a vocabulary word for ${id}:</br>
-            <input type="string" id="spelling" placeholder="spell the word"></input></br>
-            <input type="text" id="pos" placeholder="part of speech"></input></br>
-            <input type="text" id="definition" placeholder="define word"></input></br>
-            <input type="text" id="sentence" placeholder="use word in a sentence"></input></br>
+            <input type="string" id="spelling" name="spelling" placeholder="spell the word"></input></br>
+            <input type="text" id="pos" name="pos" placeholder="part of speech"></input></br>
+            <input type="text" id="definition" name="definition" placeholder="define word"></input></br>
+            <input type="text" id="sentence" name="sentence" placeholder="use the word in a sentence"></input></br>
             <input type="submit" value="new word">   
         </form>   
         `
@@ -120,16 +127,26 @@ function addWordForm(id) {
 }
 
 function wordFormSubmission(id) {
+    
     event.preventDefault()
     
-    
+
 
     // INPORTANT: Remember to add .value to get data out of form <input> field
+
+    // let spelling = event.target.spelling.value
+    // let pos = event.target.pos.value
+    // let definition = event.target.definition.value
+    // let sentence = event.target.sentence.value
+
+
+
     let spelling = document.getElementById("spelling").value
     let pos = document.getElementById("pos").value
     let definition = document.getElementById("definition").value
     let sentence = document.getElementById("sentence").value
     
+    debugger;
 
     let wordFormInput = {
         spelling: spelling,
@@ -177,6 +194,25 @@ function wordFormSubmission(id) {
 
 }
 
+
+
+function findStudent(id) {
+    function fetchStudents() {
+        fetch(`${BASE_URL}/students`)
+        .then(resp => resp.json())
+        .then(students => { console.log(students)
+debugger;
+            // for(const student of students) {
+            //     let s = new Student(student.id, student.name, student.nickname, student.email)
+                
+            //     if (student.id == id) {
+            //         return student.name
+            //     }
+
+            // }
+        })
+    }
+}
 
 
 
