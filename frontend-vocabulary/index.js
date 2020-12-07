@@ -136,7 +136,7 @@ function wordFormSubmission(id) {
         pos: pos,
         definition: definition,
         sentence: sentence,
-        student_id: id
+        // student_id: id
     }
     
     fetch(`${BASE_URL}/words`, {
