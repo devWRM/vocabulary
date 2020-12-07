@@ -27,11 +27,11 @@ function studentForm() {
     formDiv.innerHTML +=
         `
         <form id = "reset-form"> 
-        Fill in all textboxes:</br>
+        Fill in all textboxes then click new student:</br>
             <input type="text" id="name" placeholder="name"></input></br>
             <input type="text" id="nickname" placeholder="nickname"></input></br>
             <input type="email" id="email" placeholder="email"></input></br>
-            <input type="submit" value="create new student">   
+            <input type="submit" value="new student">   
         </form>   
         `
 
@@ -88,7 +88,8 @@ function deleteStudent() {
 
 
 // CRUD Create WORD
-function createWord() {
+function addWordForm() {
+    
 
 }
 
