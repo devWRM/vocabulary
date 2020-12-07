@@ -4,7 +4,9 @@ class Student {
         this.name = name;
         this.nickname = nickname;
         this.email = email;
+
     }
+
 
 
     renderStudent() {
