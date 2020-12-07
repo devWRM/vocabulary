@@ -1,6 +1,17 @@
 
 
 
+
+
+
+================================================
+
+Delete dependents by putting __ in the parent's model:
+
+    :dependent => :destroy
+
+================================================
+
 Create a Word in the database with =>> rails c
 
 Word.create(spelling: "English", pos: "adjective", definition: "a language", sentence: "I want to learn English", student_id: 1)
@@ -66,7 +77,8 @@ DELETE Student Steps
 ====================================
 
 CREATE Word Steps
-    - Add an add word button with an onclick listener to the renderStudent method in the Student class
+    - Add =>> (add word button with an onclick listener) to the renderStudent method in the Student class
+    - Create a showForm function to hide student related divs and call to show the form
     - Create a form function and set up event listener in it to trigger CREATE
     - Create a submission function fo fetch POST data to URL address
 
