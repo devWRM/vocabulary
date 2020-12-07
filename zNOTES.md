@@ -1,5 +1,14 @@
 
 
+
+Create a Word in the database with =>> rails c
+
+Word.create(spelling: "English", pos: "adjective", definition: "a language", sentence: "I want to learn English", student_id: 1)
+
+
+
+================================================
+
 [[ TOGGLE to Show & Hide ]]
 LEARNCO =>>     jsdom-toy-tale-onl01-seng-ft-081720
 
