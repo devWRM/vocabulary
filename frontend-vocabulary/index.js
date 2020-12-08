@@ -97,6 +97,7 @@ function showForm() {
     let hideStudents = document.getElementById("container")
     hideStudents.style.display = "none";
 
+    // let studentId = event.target.dataset.id
     let studentId = parseInt(event.target.dataset.id)
     addWordForm(studentId)
 }
@@ -122,16 +123,16 @@ function addWordForm(id) {
         `
 
     let thisWordForm = document.getElementById("this-word-form")
-    thisWordForm.addEventListener("submit", wordFormSubmission(id))
+    thisWordForm.addEventListener("submit", () => {wordFormSubmission(id)})   
+        // thisWordForm.addEventListener("submit", wordFormSubmission(id))
 
 }
+
 
 function wordFormSubmission(id) {
     
     event.preventDefault()
     
-
-
     // INPORTANT: Remember to add .value to get data out of form <input> field
 
     // let spelling = event.target.spelling.value
@@ -140,13 +141,10 @@ function wordFormSubmission(id) {
     // let sentence = event.target.sentence.value
 
 
-
     let spelling = document.getElementById("spelling").value
     let pos = document.getElementById("pos").value
     let definition = document.getElementById("definition").value
     let sentence = document.getElementById("sentence").value
-    
-    debugger;
 
     let wordFormInput = {
         spelling: spelling,
@@ -154,8 +152,11 @@ function wordFormSubmission(id) {
         definition: definition,
         sentence: sentence,
         // student_id: id
+
     }
-    
+
+    // debugger;        // wordFormInput object successfully created
+
     fetch(`${BASE_URL}/words`, {
         method: "POST",
         headers: {
@@ -164,8 +165,9 @@ function wordFormSubmission(id) {
             },
         body: JSON.stringify(wordFormInput)
     })
-    .then(resp => resp.json())
-    .then(apiWord => console.log(apiWord))
+    .then(resp => console.log(resp))
+    // .then(resp => resp.json())
+    // .then(apiWord => console.log(apiWord))
 
 
 
