@@ -1,9 +1,32 @@
-QUESTIONS
+
+
+
+QUESTIONS       NOTE Open Office Hours   10a  12n  3p
+                NOTE 2 separate times, refreshing window does not clear a console log, I had to re-open the html file in the browser to clear the log
+
+Q1 ]]
 How to debug backend to check that information is being posted correctly to create a Word
 ** Rails server terminal error:    Unpermitted parameter: :student_id
 ** Completed 422 Unprocessable Entity in 2ms
 
+Q2 ]]
 In the wordFormSubmission function, the fetch Post for words is not working. Why?
+
+Q3 ]]
+NOTE Do I build actions in the controller for these has_many paths
+
+To display a student's list of words on click [this.words], I need the path =>>     /students/:id/words
+
+    But I can't find a path in =>>  http://localhost:3000/rails/info/routes
+    HOWEVER In the rails console Student.all[0].words
+            brings up an array of all of Abe's words
+    BUT     Also in the rails console Student.all[0]
+            Does NOT show any indication that Abe has words
+            
+        -- OR --
+
+To display list of words for ALL individual students after DOM load [NOTE I successfully fetched an array of word objects]
+    - I need a class array of all students that I can iterate over and add their words to their word list
 
 
 
@@ -40,7 +63,7 @@ Word.create(spelling: "powerful", pos: "adjective", definition: "having or exert
 
 Word.create(spelling: "dance", pos: "verb", definition: "move your body expressively", sentence: "Will you dance with me?", student_id: 16)
 
-
+Word.create(spelling: "zigzag", pos: "adjective", definition: "sharp turns first to one side and then to the other", sentence: "The US has many zigzag roads.", student_id: 19)
 
 ================================================
 
@@ -111,4 +134,30 @@ READ Word Steps
 
 
 DELETE Word Steps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To display a student's list of words on click [this.words], I need the path =>>     /students/:id/words
+ex 02:00 https://www.youtube.com/watch?v=pGkSHeEZLMU
+ex filter   https://www.youtube.com/watch?v=R8rmfD9Y5-c
 
