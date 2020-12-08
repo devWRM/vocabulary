@@ -2,11 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchStudents()
     studentForm()
 
+    // fetchWords()
+    fetchSingleWordList()
+    // fetchSingleStudent()
+
 })
 
 const BASE_URL = "http://localhost:3000"
 
-// CRUD Read STUDENT
+// CRUD Read STUDENT (index list of ALL students)
 function fetchStudents() {
     fetch(`${BASE_URL}/students`)
     .then(resp => resp.json())
@@ -86,10 +90,7 @@ function deleteStudent() {
 }
 
 
-
-
 // CRUD Create WORD
-
 function showForm() {
 
     // debugger;
@@ -170,22 +171,10 @@ function wordFormSubmission(id) {
     // .then(apiWord => console.log(apiWord))
 
 
-
-    // .then(apiStudent => {
-        
-    //     let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
-    //     student.renderStudent();
+    // .then(apiWord => {
+    //     let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
+    //     word.renderWord();
     // })
-
-
-
-
-
-
-
-
-
-
 
 
     // let deleteWordForm = document.getElementById("word-form")
@@ -195,7 +184,6 @@ function wordFormSubmission(id) {
     // hideStudents.style.display = "none";
 
 }
-
 
 
 function findStudent(id) {
@@ -218,4 +206,54 @@ debugger;
 
 
 
+
+
+
+// WORKING CRUD Read WORD (index list of ALL words) =>>     WORKS
+function fetchWords() {
+    fetch(`${BASE_URL}/words`)
+    .then(resp => resp.json())
+    .then(apiWords => { // console.log(apiWords)
+
+        for(const word of apiWords) {
+            let jsWord = new Word(word.spelling, word.pos, word.definition, word.sentence)
+            jsWord.renderWord();
+        }
+        
+    })
+}
+
+
+
+
+// WORKING CRUD Read WORD (single wordlist for each student)    =>>   WORKS
+function fetchSingleWordList() {
+    fetch(`${BASE_URL}/students/19/words`)
+    .then(resp => resp.json())
+    .then(apiWords => { // console.log(apiWords)
+
+        for(const word of apiWords) {
+            let jsWord = new Word(word.spelling, word.pos, word.definition, word.sentence)
+            jsWord.renderStudentWord();
+
+            // jsWord.renderWord();
+        }
+        
+    })
+}
+
+
+
+
+// WORKING CRUD Read STUDENT (single student) =>>   WORKS
+function fetchSingleStudent() {
+    fetch(`${BASE_URL}/students/19`)
+    .then(resp => resp.json())
+    .then(apiStudent => { // console.log(apiStudent)
+
+            let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
+            s.renderStudent();
+       
+    })
+}
 
