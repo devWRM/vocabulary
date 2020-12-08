@@ -9,18 +9,24 @@ class Word {
 
 
     renderStudentWord() {
-        let wordsContainer = document.getElementById("words-container")
-        wordsContainer.innerHTML +=
 
-        `
-        <p>
-            <b>Vocabulary Word:</b> ${this.spelling}</br>           
-            <b>Part of speech:</b> ${this.pos}</br>
-            <b>Definition:</b> ${this.definition}</br>
-            <b>Sentence:</b> ${this.sentence}
+        // let studentId = parseInt(event.target.dataset.id)
+        // let wordsContainer = document.getElementById("words-container")
+        // wordsContainer.innerHTML +=
+
+        let wordList = document.querySelector("p")
+        console.log(wordList)
+        // wordList.innerHTML +=
+
+        // `
+        // <div>
+        //     <b>Vocabulary Word:</b> ${this.spelling}</br>           
+        //     <b>Part of speech:</b> ${this.pos}</br>
+        //     <b>Definition:</b> ${this.definition}</br>
+        //     <b>Sentence:</b> ${this.sentence}
              
-        </p>
-        `
+        // </div>
+        // `
     }
 
 
@@ -32,13 +38,14 @@ class Word {
         wordsContainer.innerHTML +=
 
         `
-        <p>
+        <div>
             <b>Vocabulary Word:</b> ${this.spelling}</br>           
             <b>Part of speech:</b> ${this.pos}</br>
             <b>Definition:</b> ${this.definition}</br>
             <b>Sentence:</b> ${this.sentence}
              
-        </p>
+        </div>
+        <div>______________________</div>
         `
     }
 
