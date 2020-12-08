@@ -20,7 +20,6 @@ class Student {
             <button class="add-word" data-id=${this.id} onclick="showForm()">add a word for ${this.nickname}</button> 
             <button class="delete-button" data-id=${this.id} onclick="deleteStudent()">delete ${this.nickname}</button> 
         </ul>
-        
         `
 
         
