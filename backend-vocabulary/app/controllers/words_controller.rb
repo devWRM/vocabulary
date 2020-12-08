@@ -3,9 +3,19 @@ class WordsController < ApplicationController
 
   # GET /words
   def index
-    @words = Word.all
+    # @words = Word.all
+    # render json: @words
 
-    render json: @words
+
+    if params[:student_id] && @student = Student.find_by_id(params[:student_id])
+        @words = @student.words
+        render json: @words
+    else
+        # @error = "That user doesn't exist" if params[:student_id]
+        @words = Word.all
+        render json: @words
+    end
+
   end
 
   # GET /words/1
