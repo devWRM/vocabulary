@@ -1,6 +1,7 @@
-
-
-
+QUESTIONS
+How to debug backend to check that information is being posted correctly to create a Word
+** Rails server terminal error:    Unpermitted parameter: :student_id
+** Completed 422 Unprocessable Entity in 2ms
 
 
 
