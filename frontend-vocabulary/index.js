@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     studentForm()
 
     // fetchWords()
-    fetchSingleWordList()
+    // fetchSingleWordList()
     // fetchSingleStudent()
 
 })
@@ -228,15 +228,25 @@ function fetchWords() {
 
 // WORKING CRUD Read WORD (single wordlist for each student)    =>>   WORKS
 function fetchSingleWordList() {
-    fetch(`${BASE_URL}/students/19/words`)
+
+    let studId = parseInt(event.target.dataset.id)
+    let studName = fetchSingleStudent(studId)
+
+
+    fetch(`${BASE_URL}/students/${studId}/words`)
     .then(resp => resp.json())
     .then(apiWords => { // console.log(apiWords)
 
+        let wordsContainer = document.getElementById("words-container")
+        wordsContainer.innerHTML = `${studName}'s word list: `
+
+
+
         for(const word of apiWords) {
             let jsWord = new Word(word.spelling, word.pos, word.definition, word.sentence)
-            jsWord.renderStudentWord();
+            // jsWord.renderStudentWord();
 
-            // jsWord.renderWord();
+            jsWord.renderWord();
         }
         
     })
@@ -246,13 +256,15 @@ function fetchSingleWordList() {
 
 
 // WORKING CRUD Read STUDENT (single student) =>>   WORKS
-function fetchSingleStudent() {
-    fetch(`${BASE_URL}/students/19`)
+function fetchSingleStudent(studId) {
+    fetch(`${BASE_URL}/students/${studId}`)
     .then(resp => resp.json())
     .then(apiStudent => { // console.log(apiStudent)
 
             let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
-            s.renderStudent();
+          
+            console.log(s.nickname)
+            // s.renderStudent();
        
     })
 }
