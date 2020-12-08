@@ -17,6 +17,10 @@ Delete dependents by putting __ in the parent's model:
 
 Create a Word in the database with =>> rails c
 
+Student.destroy_all
+Word.destroy_all
+
+Student.create(name: "Abraham A.", nickname: "abe", email: "abe@email.com")
 Word.create(spelling: "English", pos: "adjective", definition: "a language", sentence: "I want to learn English", student_id: 1)
 
  Word.all[0].student.name           =>  "Abraham A."
