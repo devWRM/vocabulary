@@ -11,7 +11,7 @@ In the wordFormSubmission function, the fetch Post for words is not working. Why
 
 Delete dependents by putting __ in the parent's model:
 
-    :dependent => :destroy
+    :dependent => :destroy      -OR-        :dependent => :delete_all
 
 ================================================
 
@@ -21,6 +21,22 @@ Word.create(spelling: "English", pos: "adjective", definition: "a language", sen
 
  Word.all[0].student.name           =>  "Abraham A."
  Student.all[0].words[0].spelling   =>  "English"
+
+
+
+
+
+Word.create(spelling: "powerful", pos: "adjective", definition: "having or exerting force", sentence: "I am a powerful man.", student_id: 1)
+ 
+ Word.create(spelling: "zebra", pos: "noun", definition: "an African mammal that is related to the horse", sentence: "I ride my zebra like it's a horse.", student_id: 19)
+
+ Word.create(spelling: "exercise", pos: "verb", definition: "to put into practice", sentence: "I like to exercise everday.", student_id: 18)
+
+ Word.create(spelling: "exercise", pos: "noun", definition: "bodily or mental exertion", sentence: "Walking is good exercise.", student_id: 17)
+
+Word.create(spelling: "dance", pos: "verb", definition: "move your body expressively", sentence: "Will you dance with me?", student_id: 16)
+
+
 
 ================================================
 
