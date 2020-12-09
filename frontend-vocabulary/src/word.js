@@ -49,7 +49,7 @@ class Word {
             <button class="delete-word" data-id=${this.id} onclick="deleteWord()">delete: ${this.spelling}</button>
 
             <div>______________________</div>
-            </div>
+        </div>
         
         `
     }
