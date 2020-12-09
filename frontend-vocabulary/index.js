@@ -29,7 +29,7 @@ function studentForm() {
 
     formDiv.innerHTML +=
         `
-        <form id = "reset-form"> 
+        <form id = "this-student-form"> 
         Fill in all textboxes then click new student:</br>
             <input type="text" id="name" placeholder="name"></input></br>
             <input type="text" id="nickname" placeholder="nickname"></input></br>
@@ -70,7 +70,7 @@ function studentFormSubmission() {
         student.renderStudent();
     })
 
-    let thisForm = document.getElementById("reset-form")
+    let thisForm = document.getElementById("this-student-form")
     thisForm.reset()
 
 }
