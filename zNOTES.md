@@ -1,13 +1,18 @@
 
 
 
+
+
 QUESTIONS
 Q1 ]]
+How do I refactor to empty out my index.js file?
+
+Q2 ]]
 How do I pry to see how the backend is receiving a request from the frontend?
 
 
 
-
+FETCH errors Catch
 
 
 ___________________________________________________
@@ -171,6 +176,7 @@ ORIGINAL Page Reload:       this.location.reload()
 
 ToDo List
 GENERAL
+    - Refactor to empty out the index.js file as much as possible
     - practice for assessment: walk through explaining how the app works
     - handle errors & bad input
     - use CSS to style the webpage
