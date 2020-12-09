@@ -46,7 +46,7 @@ class Word {
             <b>Definition:</b> ${this.definition}</br>
             <b>Sentence:</b> ${this.sentence}</br>
 
-            <button class="delete-word" data-id=${this.id} onclick="deleteWord()">delete ${this.spelling}</button>
+            <button class="delete-word" data-id=${this.id} onclick="deleteWord()">delete: ${this.spelling}</button>
 
             <div>______________________</div>
             </div>
