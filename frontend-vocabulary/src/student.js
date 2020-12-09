@@ -24,7 +24,6 @@ class Student {
 
             <button class="delete-button" data-id=${this.id} onclick="deleteStudent()">delete ${this.nickname}</button> 
 
-            <p></p>
         </ul>
         `
 
