@@ -119,7 +119,8 @@ function addWordForm(id) {
             <input type="text" id="definition" name="definition" placeholder="define word"></input></br>
             <input type="text" id="sentence" name="sentence" placeholder="use the word in a sentence"></input></br>
             
-            <input type="submit" value="new word">   
+            <input type="submit" value="new word">
+            <button id="cancel-add-word" onclick="reloadPage()">cancel</button>
         </form>   
         `
 
@@ -249,6 +250,11 @@ function deleteWord() {
 
 }
 
+
+
+function reloadPage() {
+    this.location.reload()
+}
 
 
 
