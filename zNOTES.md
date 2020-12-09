@@ -149,7 +149,16 @@ DELETE Word Steps
 
 
 
+ToDo List
+GENERAL
+    - handle errors & bad input
 
+WORD
+    - add a cancel button to add a word to redirect to main page without creating a word
+
+
+
+STUDENT
 
 
 
