@@ -109,23 +109,23 @@ function addWordForm(id) {
 
     let formDiv = document.getElementById("word-form")
 
-    // let studentName = findStudent(id)
-    // Fetch needed to find student name using id
+    // let studentName = fetchSingleStudent(id)
     formDiv.innerHTML +=
         `
         <form id = "this-word-form"> 
         Enter a vocabulary word for ${id}:</br>
             <input type="string" id="spelling" name="spelling" placeholder="spell the word"></input></br>
-            <input type="text" id="pos" name="pos" placeholder="part of speech"></input></br>
+            <input type="string" id="pos" name="pos" placeholder="part of speech"></input></br>
             <input type="text" id="definition" name="definition" placeholder="define word"></input></br>
             <input type="text" id="sentence" name="sentence" placeholder="use the word in a sentence"></input></br>
+            
             <input type="submit" value="new word">   
         </form>   
         `
 
     let thisWordForm = document.getElementById("this-word-form")
     thisWordForm.addEventListener("submit", () => {wordFormSubmission(id)})   
-        // thisWordForm.addEventListener("submit", wordFormSubmission(id))
+        // thisWordForm.addEventListener("submit", wordFormSubmission(id))  <<= needs to be a block function
 
 }
 
@@ -152,13 +152,13 @@ function wordFormSubmission(id) {
         pos: pos,
         definition: definition,
         sentence: sentence,
-        // student_id: id
+        student_id: id
 
     }
 
-    // debugger;        // wordFormInput object successfully created
+// wordFormInput object successfully created
 
-    fetch(`${BASE_URL}/words`, {
+    fetch(`${BASE_URL}/students/${id}/words`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -166,9 +166,14 @@ function wordFormSubmission(id) {
             },
         body: JSON.stringify(wordFormInput)
     })
-    .then(resp => console.log(resp))
-    // .then(resp => resp.json())
-    // .then(apiWord => console.log(apiWord))
+    .then(resp => resp.json())
+    .then(apiWord => { //console.log(apiWord)
+
+        this.location.reload()
+      
+    })
+
+
 
 
     // .then(apiWord => {
@@ -177,11 +182,16 @@ function wordFormSubmission(id) {
     // })
 
 
+    // let hideStudents = document.getElementById("container")
+    // hideStudents.style.display = "none";
+
+    // let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
+    // word.renderWord();
+
     // let deleteWordForm = document.getElementById("word-form")
     // deleteWordForm.innerHTML = ""
 
-    // let hideStudents = document.getElementById("container")
-    // hideStudents.style.display = "none";
+    
 
 }
 
@@ -263,7 +273,7 @@ function fetchSingleStudent(studId) {
 
             let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
           
-            console.log(s.nickname)
+            console.log(`${s.nickname} is from the fetchSingleStudent function`)
             // s.renderStudent();
        
     })
