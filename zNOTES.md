@@ -1,7 +1,17 @@
 
 
 
-QUESTIONS       NOTE Open Office Hours   10a  12n  3p
+QUESTIONS
+Q1 ]]
+How do I pry to see how the backend is receiving a request from the frontend?
+
+
+
+
+
+
+___________________________________________________
+       NOTE Open Office Hours   10a  12n  3p
                 NOTE 2 separate times, refreshing window does not clear a console log, I had to re-open the html file in the browser to clear the log
 
 Q1 ]]
