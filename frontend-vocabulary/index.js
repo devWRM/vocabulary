@@ -174,8 +174,6 @@ function wordFormSubmission(id) {
     })
 
 
-
-
     // .then(apiWord => {
     //     let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
     //     word.renderWord();
@@ -191,31 +189,7 @@ function wordFormSubmission(id) {
     // let deleteWordForm = document.getElementById("word-form")
     // deleteWordForm.innerHTML = ""
 
-    
-
 }
-
-
-function findStudent(id) {
-    function fetchStudents() {
-        fetch(`${BASE_URL}/students`)
-        .then(resp => resp.json())
-        .then(students => { console.log(students)
-debugger;
-            // for(const student of students) {
-            //     let s = new Student(student.id, student.name, student.nickname, student.email)
-                
-            //     if (student.id == id) {
-            //         return student.name
-            //     }
-
-            // }
-        })
-    }
-}
-
-
-
 
 
 
@@ -226,13 +200,12 @@ function fetchWords() {
     .then(apiWords => { // console.log(apiWords)
 
         for(const word of apiWords) {
-            let jsWord = new Word(word.spelling, word.pos, word.definition, word.sentence)
+            let jsWord = new Word(word.id, word.spelling, word.pos, word.definition, word.sentence)
             jsWord.renderWord();
         }
         
     })
 }
-
 
 
 
@@ -253,13 +226,27 @@ function fetchSingleWordList() {
 
 
         for(const word of apiWords) {
-            let jsWord = new Word(word.spelling, word.pos, word.definition, word.sentence)
+            let jsWord = new Word(word.id, word.spelling, word.pos, word.definition, word.sentence)
             // jsWord.renderStudentWord();
 
             jsWord.renderWord();
         }
         
     })
+}
+
+
+// WORKING CRUD Delete WORD     =>>   WORKS
+function deleteWord() {
+
+    let wordId = parseInt(event.target.dataset.id)
+
+    fetch(`${BASE_URL}/words/${wordId}`, {
+        method: "DELETE"
+    })
+
+    this.location.reload()
+
 }
 
 
@@ -273,9 +260,35 @@ function fetchSingleStudent(studId) {
 
             let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
           
-            console.log(`${s.nickname} is from the fetchSingleStudent function`)
+            // console.log(`${s.nickname} is from the fetchSingleStudent function`)
             // s.renderStudent();
        
     })
 }
+
+
+
+function findStudent(id) {
+    function fetchStudents() {
+        fetch(`${BASE_URL}/students`)
+        .then(resp => resp.json())
+        .then(students => { console.log(students)
+
+            // for(const student of students) {
+            //     let s = new Student(student.id, student.name, student.nickname, student.email)
+                
+            //     if (student.id == id) {
+            //         return student.name
+            //     }
+
+            // }
+        })
+    }
+}
+
+
+
+
+
+
 
