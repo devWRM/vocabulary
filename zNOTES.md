@@ -154,11 +154,13 @@ GENERAL
     - handle errors & bad input
 
 WORD
-    - add a cancel button to add a word to redirect to main page without creating a word
-
+    - use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
+    - use student's name to identify their word list
+    - handle empty form box entries
 
 
 STUDENT
+    - handle empty form box entries
 
 
 
