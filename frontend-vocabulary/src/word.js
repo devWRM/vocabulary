@@ -1,9 +1,11 @@
 class Word {
-    constructor(spelling, pos, definition, sentence) {
+    constructor(id, spelling, pos, definition, sentence) {
+        this.id = id;
         this.spelling = spelling;
         this.pos = pos;
         this.definition = definition;
         this.sentence = sentence;
+        
     }
 
 
@@ -42,10 +44,13 @@ class Word {
             <b>Vocabulary Word:</b> ${this.spelling}</br>           
             <b>Part of speech:</b> ${this.pos}</br>
             <b>Definition:</b> ${this.definition}</br>
-            <b>Sentence:</b> ${this.sentence}
-             
-        </div>
-        <div>______________________</div>
+            <b>Sentence:</b> ${this.sentence}</br>
+
+            <button class="delete-word" data-id=${this.id} onclick="deleteWord()">delete ${this.spelling}</button>
+
+            <div>______________________</div>
+            </div>
+        
         `
     }
 
