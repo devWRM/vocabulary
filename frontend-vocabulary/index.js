@@ -186,6 +186,10 @@ function wordFormSubmission(id) {
 
 // WORKING CRUD Read WORD (index list of ALL words) =>>     WORKS
 function fetchWords() {
+
+    let wordsContainer = document.getElementById("words-container")
+    wordsContainer.innerHTML = `ALL STUDENTS Word List: `
+
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
     .then(apiWords => { // console.log(apiWords)
@@ -212,19 +216,27 @@ function fetchSingleWordList() {
     .then(apiWords => { // console.log(apiWords)
 
         let wordsContainer = document.getElementById("words-container")
-        wordsContainer.innerHTML = `Selected student's word list: `
+        wordsContainer.innerHTML = `SELECTED STUDENT Word List: `
         // wordsContainer.innerHTML = `${studName}'s word list: `
 
+        if (apiWords.length == 0) {
+            wordsContainer.innerHTML += `<div>This student does not have any words yet.</div>`
+        } else {
 
+            for(const word of apiWords) {
+                let jsWord = new Word(word.id, word.spelling, word.pos, word.definition, word.sentence)
+                // jsWord.renderStudentWord();
 
-        for(const word of apiWords) {
-            let jsWord = new Word(word.id, word.spelling, word.pos, word.definition, word.sentence)
-            // jsWord.renderStudentWord();
-
-            jsWord.renderWord();
+                jsWord.renderWord();
+            }
         }
         
     })
+    .catch(function(error) {
+        alert("Bad things! Ragnarők!");
+        console.log(error.message);
+      });
+
 }
 
 
