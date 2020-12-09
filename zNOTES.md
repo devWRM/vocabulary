@@ -149,12 +149,34 @@ DELETE Word Steps
 
 
 
+
+====================================
+
+ORIGINAL Page Reload:       this.location.reload()
+
+
+    // let hideStudents = document.getElementById("container")
+    // hideStudents.style.display = "none";
+
+    // let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
+    // word.renderWord();
+
+    // let deleteWordForm = document.getElementById("word-form")
+    // deleteWordForm.innerHTML = ""
+
+====================================
+
+
+
+
 ToDo List
 GENERAL
+    - practice for assessment: walk through explaining how the app works
     - handle errors & bad input
+    - use CSS to style the webpage
 
 WORD
-    - use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
+    ✅ use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
     - use student's name to identify their word list
     - handle empty form box entries
 
