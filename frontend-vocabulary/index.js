@@ -169,26 +169,16 @@ function wordFormSubmission(id) {
     })
     .then(resp => resp.json())
     .then(apiWord => { //console.log(apiWord)
-
+        // fetchSingleWordList(id)
         this.location.reload()
-      
     })
 
-
     // .then(apiWord => {
-    //     let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
+    //     let word = new Word(apiWord.id, apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
     //     word.renderWord();
     // })
 
-
-    // let hideStudents = document.getElementById("container")
-    // hideStudents.style.display = "none";
-
-    // let word = new Word(apiWord.spelling, apiWord.pos, apiWord.definition, apiWord.sentence, apiWord.student_id)
-    // word.renderWord();
-
-    // let deleteWordForm = document.getElementById("word-form")
-    // deleteWordForm.innerHTML = ""
+    
 
 }
 
@@ -214,7 +204,7 @@ function fetchWords() {
 function fetchSingleWordList() {
 
     let studId = parseInt(event.target.dataset.id)
-    let studName = fetchSingleStudent(studId)
+    studName = fetchSingleStudent(studId)
 
 
     fetch(`${BASE_URL}/students/${studId}/words`)
@@ -222,7 +212,8 @@ function fetchSingleWordList() {
     .then(apiWords => { // console.log(apiWords)
 
         let wordsContainer = document.getElementById("words-container")
-        wordsContainer.innerHTML = `${studName}'s word list: `
+        wordsContainer.innerHTML = `Selected student's word list: `
+        // wordsContainer.innerHTML = `${studName}'s word list: `
 
 
 
