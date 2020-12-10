@@ -67,17 +67,7 @@ function studentFormSubmission() {
     .then(apiStudent => {
         // debugger;
         
-        if (apiStudent[0] === "Name can't be blank") {
-
-            // debugger;
-            throw new Error("Please fill in all the boxes.")
-            // throw new Error(`${apiStudent.errors}`)
-
-        } else if (apiStudent[0] === "Nickname can't be blank") {
-
-            throw new Error("Please fill in all the boxes.")
-
-        } else if (apiStudent[0] === "Email can't be blank") {
+        if (apiStudent[0] === "Name can't be blank" || apiStudent[0] === "Nickname can't be blank" || apiStudent[0] === "Email can't be blank") {
 
             throw new Error("Please fill in all the boxes.")
 
