@@ -3,7 +3,12 @@
 QUESTIONS
 
 Q ]]
+Can you do more than one fetch in a function ??
+
+Q ]]
 Refactor index.js
+    10:30 https://www.youtube.com/watch?v=2xvuGWI3H58&feature=youtu.be
+    A single index.js file is ok
 
 Q ]]
 My Student validation is NOT working properly, Why?
@@ -28,7 +33,7 @@ How do I force an error in order to use .catch()
 
 
 FETCH errors Catch
-
+Increment like counter and start it at zero ( 0 )
 
 Folders: src    bin     styles
 
@@ -230,3 +235,55 @@ To display a student's list of words on click [this.words], I need the path =>> 
 ex 02:00 https://www.youtube.com/watch?v=pGkSHeEZLMU
 ex filter   https://www.youtube.com/watch?v=R8rmfD9Y5-c
 
+
+
+
+
+______________________________________________________
+
+
+PRY THE BACKEND in the Controller files
+In Gemfile                      gem 'pry'
+cd into backend then run        bundle install
+run                             rails s
+insert in controller action     binding.pry
+to exit pry, iTTT               exit    or      Q
+
+
+iTTT    In a binding pry, looking at variables:
+
+[1] pry(#<StudentsController>)> @student
+=> #<Student:0x00007ff5f65e7600
+
+[2] pry(#<StudentsController>)> @student.valid?
+=> false
+
+[3] pry(#<StudentsController>)> @student.errors
+=> #<ActiveModel::Errors:0x00007ff5f218ea30
+
+[4] pry(#<StudentsController>)> @student.errors.full_messages.to_sentence
+=> "Name can't be blank, Nickname can't be blank, and Email can't be blank"
+[5] pry(#<StudentsController>)> exit
+
+ 
+
+
+
+
+
+
+
+______________________________________________________
+NOTE Can there be 2 fetches inside one function ??
+In the fetchSingleWordList function:
+
+let studId = parseInt(event.target.dataset.id)
+    let studName = function(studId) {
+
+        fetch(`${BASE_URL}/students/${studId}`)
+        .then(resp => resp.json())
+        .then(apiStudent => { // console.log(apiStudent)
+
+            let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
+            return s.nickname
+        }
