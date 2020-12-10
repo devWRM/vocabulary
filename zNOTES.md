@@ -1,18 +1,36 @@
 
 
-
-
-
 QUESTIONS
-Q1 ]]
+
+Q ]]
+Refactor index.js
+
+Q ]]
+My Student validation is NOT working properly, Why?
+
+Q ]]
+I added validations for all attributes when adding a new word
+    it prevents empty boxes from creating a new word but
+   * it does not give a message of what went wrong to the student
+
+Q ]]
+Include student's name with their list of words
+ANSWER: You need to be in the class folder to have access to the student's name
+        And then from there, call a method that's in another class to render
+
+Q ]]
 How do I refactor to empty out my index.js file?
 
-Q2 ]]
-How do I pry to see how the backend is receiving a request from the frontend?
+Q ]]
+How do I force an error in order to use .catch()
+
 
 
 
 FETCH errors Catch
+
+
+Folders: src    bin     styles
 
 
 ___________________________________________________
@@ -179,16 +197,18 @@ GENERAL
     - Refactor to empty out the index.js file as much as possible
     - practice for assessment: walk through explaining how the app works
     - handle errors & bad input
-    - use CSS to style the webpage
-
-WORD
-    ✅ use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
-    - use student's name to identify their word list
-    - handle empty form box entries
-
+    - use CSS to style the webpage (Bootstrap)
+        https://www.youtube.com/watch?v=CSDHsmNrCEc&feature=youtu.be
 
 STUDENT
     - handle empty form box entries
+
+WORD
+    - use student's name to identify their word list
+    ✅ handle empty form box entries
+    ✅ use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
+
+
 
 
 
