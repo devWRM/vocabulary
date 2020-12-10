@@ -65,10 +65,32 @@ function studentFormSubmission() {
     })
     .then(resp => resp.json())
     .then(apiStudent => {
+        // debugger;
         
-        let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
-        student.renderStudent();
+        if (apiStudent[0] === "Name can't be blank") {
+
+            // debugger;
+            throw new Error("Please fill in all the boxes.")
+            // throw new Error(`${apiStudent.errors}`)
+
+        } else if (apiStudent[0] === "Nickname can't be blank") {
+
+            throw new Error("Please fill in all the boxes.")
+
+        } else if (apiStudent[0] === "Email can't be blank") {
+
+            throw new Error("Please fill in all the boxes.")
+
+        } else { 
+// debugger;
+            
+            let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
+            student.renderStudent();
+
+        }
+       
     })
+    .catch(alert)
 
     let thisForm = document.getElementById("this-student-form")
     thisForm.reset()
@@ -181,8 +203,6 @@ function wordFormSubmission(id) {
     //     word.renderWord();
     // })
 
-    
-
 }
 
 
@@ -211,7 +231,7 @@ function fetchWords() {
 function fetchSingleWordList() {
 
     let studId = parseInt(event.target.dataset.id)
-    studName = fetchSingleStudent(studId)
+    let studName = fetchSingleStudent(studId)
 // I need the student object
 
     fetch(`${BASE_URL}/students/${studId}/words`)
