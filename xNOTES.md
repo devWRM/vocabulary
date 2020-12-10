@@ -2,16 +2,34 @@
 
 
 
+______________________________
 
+In FILE         index.js
+In FUNCTION     studentFormSubmission()
 
+!!!  WORKS  !!!
 
+if (apiStudent[0] === "Name can't be blank") {
 
+            // debugger;
+            throw new Error("Please fill in all the boxes.")
+            // throw new Error(`${apiStudent.errors}`)
 
+        } else if (apiStudent[0] === "Nickname can't be blank") {
 
+            throw new Error("Please fill in all the boxes.")
 
+        } else if (apiStudent[0] === "Email can't be blank") {
 
+            throw new Error("Please fill in all the boxes.")
 
+        } else { 
+// debugger;
+            
+            let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
+            student.renderStudent();
 
+        }
 
 
 
