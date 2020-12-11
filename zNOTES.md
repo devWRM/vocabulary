@@ -1,5 +1,9 @@
 
 
+LINES 220 - 253 commented out
+
+
+
 QUESTIONS
 
 
@@ -292,6 +296,7 @@ ____________________________
 
         ToDo List
 GENERAL
+    - Resolve files api.js  style.css   & other files
     - Refactor to empty out the index.js file as much as possible
     - practice for assessment: walk through explaining how the app works
     - handle errors & bad input
