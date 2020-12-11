@@ -2,21 +2,15 @@
 
 QUESTIONS
 
+
+Q ]]
+How do I refactor to empty out my index.js file?
+
+Q ]]
+How do I force an error in order to use .catch()
+
 Q ]]
 Can you do more than one fetch in a function ??
-
-Q ]]
-Refactor index.js
-    10:30 https://www.youtube.com/watch?v=2xvuGWI3H58&feature=youtu.be
-    A single index.js file is ok
-
-Q ]]
-My Student validation is NOT working properly, Why?
-
-Q ]]
-I added validations for all attributes when adding a new word
-    it prevents empty boxes from creating a new word but
-   * it does not give a message of what went wrong to the student
 
 Q ]]
 Include student's name with their list of words
@@ -24,10 +18,7 @@ ANSWER: You need to be in the class folder to have access to the student's name
         And then from there, call a method that's in another class to render
 
 Q ]]
-How do I refactor to empty out my index.js file?
-
-Q ]]
-How do I force an error in order to use .catch()
+Invisible folder on my Mac
 
 
 
@@ -37,6 +28,25 @@ Increment like counter and start it at zero ( 0 )
 
 Folders: src    bin     styles
 
+
+
+
+
+
+Q ]]
+My Student validation is NOT working properly, Why?
+ANSWER Put in if statement for all fields using [0]
+
+Q ]]
+Refactor index.js
+    10:30 https://www.youtube.com/watch?v=2xvuGWI3H58&feature=youtu.be
+    A single index.js file is ok
+
+Q ]]
+I added validations for all attributes when adding a new word
+    it prevents empty boxes from creating a new word but
+   * it does not give a message of what went wrong to the student
+ANSWER Add if statement & adjust create action in Controller & put if statement in fetch statement checking all fields with [0]
 
 ___________________________________________________
        NOTE Open Office Hours   10a  12n  3p
@@ -197,23 +207,6 @@ ORIGINAL Page Reload:       this.location.reload()
 
 
 
-ToDo List
-GENERAL
-    - Refactor to empty out the index.js file as much as possible
-    - practice for assessment: walk through explaining how the app works
-    - handle errors & bad input
-    - use CSS to style the webpage (Bootstrap)
-        https://www.youtube.com/watch?v=CSDHsmNrCEc&feature=youtu.be
-
-STUDENT
-    - handle empty form box entries
-
-WORD
-    - use student's name to identify their word list
-    ✅ handle empty form box entries
-    ✅ use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
-
-
 
 
 
@@ -247,6 +240,7 @@ In Gemfile                      gem 'pry'
 cd into backend then run        bundle install
 run                             rails s
 insert in controller action     binding.pry
+(run the app)
 to exit pry, iTTT               exit    or      Q
 
 
@@ -287,3 +281,29 @@ let studId = parseInt(event.target.dataset.id)
             let s = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
             return s.nickname
         }
+
+
+
+
+
+
+
+____________________________
+
+        ToDo List
+GENERAL
+    - Refactor to empty out the index.js file as much as possible
+    - practice for assessment: walk through explaining how the app works
+    - handle errors & bad input
+    - use CSS to style the webpage (Bootstrap)
+        https://www.youtube.com/watch?v=CSDHsmNrCEc&feature=youtu.be
+
+STUDENT
+    ✅ handle empty form box entries
+
+WORD
+    - use student's name to identify their word list
+    - handle empty form box entries
+    ✅ use [ this.location.reload() ] to add a cancel button to add a word to redirect to main page without creating a word
+
+
