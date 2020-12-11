@@ -30,10 +30,10 @@ function studentForm() {
     formDiv.innerHTML +=
         `
         <form id = "this-student-form"> 
-        Fill in all textboxes then click new student:</br>
-            <input type="text" id="name" placeholder="name"></input></br>
-            <input type="text" id="nickname" placeholder="nickname"></input></br>
-            <input type="email" id="email" placeholder="email"></input></br>
+        Fill in all textboxes then click new student:</br></br>
+            <input type="text" id="name" placeholder="name"></input></br></br>
+            <input type="text" id="nickname" placeholder="nickname"></input></br></br>
+            <input type="email" id="email" placeholder="email"></input></br></br>
             <input type="submit" value="new student">   
         </form>   
         `
@@ -126,10 +126,10 @@ function addWordForm(id) {
         `
         <form id = "this-word-form"> 
         Enter a vocabulary word for ${id}:</br>
-            <input type="string" id="spelling" name="spelling" placeholder="spell the word"></input></br>
-            <input type="string" id="pos" name="pos" placeholder="part of speech"></input></br>
-            <input type="text" id="definition" name="definition" placeholder="define word"></input></br>
-            <input type="text" id="sentence" name="sentence" placeholder="use the word in a sentence"></input></br>
+            <input type="string" id="spelling" name="spelling" placeholder="spell the word"></input></br></br>
+            <input type="string" id="pos" name="pos" placeholder="part of speech"></input></br></br>
+            <textarea type="text" id="definition" name="definition" placeholder="define word" rows="5" cols="50"></textarea></br></br>
+            <textarea type="text" id="sentence" name="sentence" placeholder="use the word in sentences" rows="10" cols="50"></textarea></br></br>
             
             <input type="submit" value="new word">
             <button id="cancel-add-word" onclick="reloadPage()">cancel</button>
