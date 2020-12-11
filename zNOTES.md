@@ -48,7 +48,7 @@ ___________________________________________________
 
 Q ]]
 How do I force an error in order to use .catch()
-ANSWER  Miss-spell a strong params attribute at the bottom of appropriate Controller
+ANSWER  Misspell a strong params attribute at the bottom of appropriate Controller
     15:45   JS/Rails Project Build: PART 4 — OOJS Refactor
         https://www.youtube.com/watch?v=oUiLxmgOvJ8&feature=youtu.be  
 
@@ -76,7 +76,7 @@ ANSWER Pry
 
 Q2 ]]
 In the wordFormSubmission function, the fetch Post for words is not working. Why?
-ANSWER Make sure you have .value on the variables passed in
+ANSWER Make sure you collected the .value on the variables passed in
 
 Q3 ]]
 NOTE Do I build actions in the controller for these has_many paths
