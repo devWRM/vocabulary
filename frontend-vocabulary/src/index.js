@@ -20,6 +20,7 @@ function fetchStudents() {
             s.renderStudent();
         }
     })
+    .catch(err => console.log(err))
 }
 
 
@@ -54,6 +55,9 @@ function studentFormSubmission() {
         nickname: nickname,
         email: email
     }
+
+    // If you're passing in the variables, & function parameters have same name as the object keys:
+    // you can use single naming =>>   let studentFormInput = {name, nickname, email}
     
     fetch(`${BASE_URL}/students`, {
         method: "POST",
