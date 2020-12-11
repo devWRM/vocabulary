@@ -13,8 +13,6 @@ git add .       <<= is NOT working, WHY?
 Q ]]
 How do I refactor to empty out my index.js file?
 
-Q ]]
-How do I force an error in order to use .catch()
 
 Q ]]
 Can you do more than one fetch in a function ??
@@ -40,12 +38,27 @@ Folders: src    bin     styles
 
 
 
+___________________________________________________
+       NOTE Open Office Hours   10a  12n  3p
+                NOTE 2 separate times, refreshing window does not clear a console log, I had to re-open the html file in the browser to clear the log
+
+
+
+
+
+Q ]]
+How do I force an error in order to use .catch()
+ANSWER  Miss-spell a strong params attribute at the bottom of appropriate Controller
+    15:45   JS/Rails Project Build: PART 4 — OOJS Refactor
+        https://www.youtube.com/watch?v=oUiLxmgOvJ8&feature=youtu.be  
+
 Q ]]
 My Student validation is NOT working properly, Why?
 ANSWER Put in if statement for all fields using [0]
 
 Q ]]
 Refactor index.js
+ANSWER
     10:30 https://www.youtube.com/watch?v=2xvuGWI3H58&feature=youtu.be
     A single index.js file is ok
 
@@ -55,21 +68,19 @@ I added validations for all attributes when adding a new word
    * it does not give a message of what went wrong to the student
 ANSWER Add if statement & adjust create action in Controller & put if statement in fetch statement checking all fields with [0]
 
-___________________________________________________
-       NOTE Open Office Hours   10a  12n  3p
-                NOTE 2 separate times, refreshing window does not clear a console log, I had to re-open the html file in the browser to clear the log
-
 Q1 ]]
 How to debug backend to check that information is being posted correctly to create a Word
 ** Rails server terminal error:    Unpermitted parameter: :student_id
 ** Completed 422 Unprocessable Entity in 2ms
+ANSWER Pry
 
 Q2 ]]
 In the wordFormSubmission function, the fetch Post for words is not working. Why?
+ANSWER Make sure you have .value on the variables passed in
 
 Q3 ]]
 NOTE Do I build actions in the controller for these has_many paths
-
+ANSWER Yes
 To display a student's list of words on click [this.words], I need the path =>>     /students/:id/words
 
     But I can't find a path in =>>  http://localhost:3000/rails/info/routes
@@ -242,12 +253,14 @@ ex filter   https://www.youtube.com/watch?v=R8rmfD9Y5-c
 ______________________________________________________
 
 
-PRY THE BACKEND in the Controller files
+PRY THE BACKEND by placing binding.pry in the Controller files
 In Gemfile                      gem 'pry'
 cd into backend then run        bundle install
 run                             rails s
 insert in controller action     binding.pry
-(run the app)
+(run the app action you're trying to hit ex. index, create, etc)
+(see pry results in the rails s server/iTTT)
+to test variables, iTTT press   Q 
 to exit pry, iTTT               exit    or      Q
 
 
@@ -299,7 +312,7 @@ ____________________________
 
         ToDo List
 GENERAL
-    -ReDo app & include a serializer
+    - ReDo app & include a serializer
     - Resolve files api.js  style.css   & other files
     - Refactor to empty out the index.js file as much as possible
     - practice for assessment: walk through explaining how the app works
