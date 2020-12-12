@@ -5,6 +5,14 @@ class Student {
         this.nickname = nickname;
         this.email = email;
 
+        Student.all.push(this)
+        
+    }
+
+
+
+    static findById(id) {
+        return this.all.find(student => student.id === id)
     }
 
 
@@ -28,10 +36,10 @@ class Student {
 
             </ul>
         </div>
-        `
-
-        
+        `       
     }
-
-
 }
+
+
+Student.all = []
+
