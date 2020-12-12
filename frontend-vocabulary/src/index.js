@@ -111,8 +111,11 @@ function showForm() {
 
     // debugger;
 
-    let hideStudents = document.getElementById("hide-container")
+    let hideStudents = document.getElementById("hide-students-container")
     hideStudents.style.display = "none";
+
+    let hideWords = document.getElementById("hide-words-container")
+    hideWords.style.display = "none";
 
     // let studentId = event.target.dataset.id
     let studentId = parseInt(event.target.dataset.id)
