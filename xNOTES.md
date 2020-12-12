@@ -1,5 +1,36 @@
 
 
+
+
+
+
+
+
+
+
+
+______________________________
+
+
+ORIGINAL File:      index.html
+
+<body>
+    <div id = "container">
+        <button id = "list-all-words" onclick="fetchWords()">list all words</button>
+        <div id = "student-form"></div>    
+        <div id = "students-container"></div>
+        <div id = "words-container"></div>
+    </div>
+
+    <div id = "word-form"></div>
+</body>
+
+
+
+______________________________
+
+
+
 ORIGINAL File:  student.js
 
 renderStudent() {
@@ -23,12 +54,6 @@ renderStudent() {
 
         
     }
-
-
-
-
-
-
 
 
 
