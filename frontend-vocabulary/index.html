@@ -25,13 +25,45 @@
 </head>
 
 <body>
-    <div id = "hide-container">
-        <button id = "list-all-words" onclick="fetchWords()">list all words</button>
-        <div id = "student-form"></div>    
-        <div id = "students-container"></div>
-        <div id = "words-container"></div>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h1>Welcome to Word Tracker!</h1>
+            <h3>Keep track of student vocabulary words list</h3>
+        </div>
     </div>
 
-    <div id = "word-form"></div>
+
+
+    <div class="row">
+        <div class="col">
+            <div id = "word-form"></div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col">
+            <div id = "hide-container">
+                <button id = "list-all-words" onclick="fetchWords()">list all words</button>
+                <div id = "student-form"></div>    
+                <div id = "students-container"></div>
+                
+            </div>
+        </div>
+
+
+        <div class="col">
+            <h4>WORDS</h4>
+            <div id = "words-container"></div>
+        </div>
+
+    </div>
+
+
+</div>
 </body>
 </html>
