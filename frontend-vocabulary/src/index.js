@@ -225,7 +225,9 @@ function fetchWords() {
 function fetchSingleWordList() {
 
     let studId = parseInt(event.target.dataset.id)
-    let studName = fetchSingleStudent(studId)
+    // let studName = fetchSingleStudent(studId)
+    let studName = (Student.findById(studId)).nickname
+
 // I need the student object
 
     fetch(`${BASE_URL}/students/${studId}/words`)
@@ -233,11 +235,11 @@ function fetchSingleWordList() {
     .then(apiWords => { // console.log(apiWords)
 
         let wordsContainer = document.getElementById("words-container")
-        wordsContainer.innerHTML = `SELECTED STUDENT Word List: `
-        // wordsContainer.innerHTML = `${studName}'s word list: `
+        // wordsContainer.innerHTML = `SELECTED STUDENT Word List: `
+        wordsContainer.innerHTML = `${studName.toUpperCase()}'s word list: `
 
         if (apiWords.length == 0) {
-            wordsContainer.innerHTML += `<div>This student does not have any words yet.</div>`
+            wordsContainer.innerHTML += `<div>${studName} does not have any words yet.</div>`
         } else {
 
             for(const word of apiWords) {
@@ -250,7 +252,7 @@ function fetchSingleWordList() {
         
     })
     .catch(function(error) {
-        alert("Bad things! Ragnarők!");
+        alert("Oops!");
         console.log(error.message);
       });
 
