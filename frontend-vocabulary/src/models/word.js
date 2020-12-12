@@ -44,9 +44,9 @@ class Word {
             <b>Vocabulary Word:</b> ${this.spelling}</br>           
             <b>Part of speech:</b> ${this.pos}</br>
             <b>Definition:</b> ${this.definition}</br>
-            <b>Sentence:</b> ${this.sentence}</br>
+            <b>Sentences:</b> ${this.sentence}</br>
 
-            <button class="delete-word" data-id=${this.id} onclick="deleteWord()">delete: ${this.spelling}</button>
+            <button type="button" class="delete-word btn btn-outline-info btn-sm" data-id=${this.id} onclick="deleteWord()">delete: ${this.spelling}</button>
 
             <div>______________________</div>
         </div>

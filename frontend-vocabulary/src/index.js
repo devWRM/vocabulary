@@ -31,11 +31,15 @@ function studentForm() {
     formDiv.innerHTML +=
         `
         <form id = "this-student-form"> 
-        Fill in all textboxes then click new student:</br></br>
-            <input type="text" id="name" placeholder="name"></input></br></br>
-            <input type="text" id="nickname" placeholder="nickname"></input></br></br>
-            <input type="email" id="email" placeholder="email"></input></br></br>
-            <input type="submit" value="new student">   
+        <div>______________________________________________</div>
+
+        Fill in all textboxes then click new student:</br>
+            <input type="text" id="name" placeholder="name"></input></br>
+            <input type="text" id="nickname" placeholder="nickname"></input></br>
+            <input type="email" id="email" placeholder="email"></input></br>
+            <input type="submit" class="btn btn-info btn-sm" value="new student">   
+
+        <div>______________________________________________</div>
         </form>   
         `
 
@@ -208,7 +212,7 @@ function wordFormSubmission(id) {
 function fetchWords() {
 
     let wordsContainer = document.getElementById("words-container")
-    wordsContainer.innerHTML = `ALL STUDENTS Word List: `
+    wordsContainer.innerHTML = `<h4>ALL WORDS List:</h4> `
 
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
@@ -239,7 +243,7 @@ function fetchSingleWordList() {
 
         let wordsContainer = document.getElementById("words-container")
         // wordsContainer.innerHTML = `SELECTED STUDENT Word List: `
-        wordsContainer.innerHTML = `${studName.toUpperCase()}'s word list: `
+        wordsContainer.innerHTML = `<h4>${studName.toUpperCase()}'s word list:</h4> `
 
         if (apiWords.length == 0) {
             wordsContainer.innerHTML += `<div>${studName} does not have any words yet.</div>`
