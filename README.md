@@ -33,7 +33,7 @@ Visit the website on Heroku here:
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/devWRM/vocabulary. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct] (https://github.com/devWRM/quote_generator/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/devWRM/vocabulary. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct] (https://github.com/devWRM/vocabulary/blob/master/CODE-OF-CONDUCT.md).
 
 
 ## License
