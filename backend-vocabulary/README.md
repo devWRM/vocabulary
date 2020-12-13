@@ -1,13 +1,14 @@
 # README
 
-ADD link to the Frontend
+Link to the Frontend
+https://github.com/devWRM/vocabulary/tree/master/frontend-vocabulary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+
+
 
 * Ruby version
+    https://github.com/devWRM/vocabulary/tree/master/frontend-vocabulary
 
 * System dependencies
 
