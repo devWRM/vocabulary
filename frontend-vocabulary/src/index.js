@@ -207,12 +207,23 @@ function wordFormSubmission(id) {
 }
 
 
+// DELETE ALL WORDS
+function deleteAllWords() {
+    fetch(`${BASE_URL}/words`, {
+        method: "DELETE"
+    })
+
+    this.location.reload()
+}
+
 
 // WORKING CRUD Read WORD (index list of ALL words) =>>     WORKS
 function fetchWords() {
 
     let wordsContainer = document.getElementById("words-container")
-    wordsContainer.innerHTML = `<h4>ALL WORDS List:</h4> `
+    wordsContainer.innerHTML = `<h4>ALL WORDS List:</h4> <button type="button" class="deleted-words btn-sm" onclick="deleteAllWords()">delete ALL words</button>`
+
+    
 
     fetch(`${BASE_URL}/words`)
     .then(resp => resp.json())
