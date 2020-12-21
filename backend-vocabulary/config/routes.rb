@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get 'students/:id/words' => "words#index"
 
+  delete 'words' => "words#delete"
+
 end
