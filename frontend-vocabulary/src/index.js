@@ -85,13 +85,13 @@ function studentFormSubmission() {
             let student = new Student(apiStudent.id, apiStudent.name, apiStudent.nickname, apiStudent.email)
             student.renderStudent();
 
+            let thisForm = document.getElementById("this-student-form")
+            thisForm.reset()
         }
        
     })
     .catch(alert)
 
-    let thisForm = document.getElementById("this-student-form")
-    thisForm.reset()
 
 }
 
