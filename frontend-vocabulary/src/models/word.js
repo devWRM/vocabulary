@@ -40,7 +40,7 @@ class Word {
         wordsContainer.innerHTML +=
 
         `
-        <div>
+        <div id=${this.id}>
             <b>Vocabulary Word:</b> ${this.spelling}</br>           
             <b>Part of speech:</b> ${this.pos}</br>
             <b>Definition:</b> ${this.definition}</br>

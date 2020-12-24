@@ -21,7 +21,7 @@ class Student {
         let studentsContainer = document.getElementById("students-container")
         studentsContainer.innerHTML +=
         `
-        <div data-id=${this.id}>
+        <div  id=${this.id} data-id=${this.id}>
             <ul>
             <h4>STUDENT: ${this.nickname}</h4>
                 <li>${this.name} <b>::</b> ${this.email}</li> 
