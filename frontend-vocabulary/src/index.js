@@ -99,16 +99,19 @@ function studentFormSubmission() {
 // CRUD Delete STUDENT
 function deleteStudent() {
    
-   
+    // let sid = event.target.dataset.id   
     let studentId = parseInt(event.target.dataset.id)
 
     fetch(`${BASE_URL}/students/${studentId}`, {
         method: "DELETE"
     })
         
-    this.location.reload()
-}
+    // this.location.reload()
 
+    let studentDiv = document.getElementById(studentId)
+    studentDiv.remove()
+
+}
 
 // CRUD Create WORD
 function showForm() {
@@ -143,7 +146,7 @@ function addWordForm(id) {
             <textarea type="text" id="sentence" name="sentence" placeholder="use the word in sentences" rows="10" cols="50"></textarea></br></br>
             
             <input type="submit" value="new word">
-            <button id="cancel-add-word" onclick="reloadPage()">cancel</button>
+            <button id="cancel-add-word" onclick="resetMainPage()">cancel</button>
         </form>   
         `
 
@@ -193,7 +196,9 @@ function wordFormSubmission(id) {
     .then(resp => resp.json())
     .then(apiWord => { //console.log(apiWord)
         // fetchSingleWordList(id)
-        this.location.reload()
+        // this.location.reload()
+
+        resetMainPage()
     })
     .catch(function(error) {
         document.body.innerHTML = error.message
@@ -213,7 +218,11 @@ function deleteAllWords() {
         method: "DELETE"
     })
 
-    this.location.reload()
+    // this.location.reload()
+
+    let wordsDiv = document.getElementById("words-container")
+    wordsDiv.innerHTML = ""
+
 }
 
 
@@ -286,14 +295,29 @@ function deleteWord() {
         method: "DELETE"
     })
 
-    this.location.reload()
+    // this.location.reload()
+
+    let wordDiv = document.getElementById(wordId)
+    wordDiv.remove()
 
 }
 
 
 
-function reloadPage() {
-    this.location.reload()
+// function reloadPage() {
+//     this.location.reload()
+// }
+
+function resetMainPage() {
+    let hideStudents = document.getElementById("hide-students-container")
+    hideStudents.style.display = "block";
+
+    let hideWords = document.getElementById("hide-words-container")
+    hideWords.style.display = "block";
+
+    let formDiv = document.getElementById("word-form")
+    formDiv.innerHTML = ""
+
 }
 
 
